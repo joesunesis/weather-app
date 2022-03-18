@@ -1,2 +1,16 @@
-<p>Weather Card</p>
-<app-weather-detail></app-weather-detail>
+<header>
+  <app-header [loc]="loc"></app-header>
+</header>
+<main *ngIf="resultFound()">
+  <div>
+    <p class="temp"><i>29</i><sup><sup>o</sup>C</sup></p>
+    <label>Cloudy</label>
+    <p class="weather-condition">
+      <app-weather-detail [weather]="weather"></app-weather-detail>
+    </p>
+    <div class="forecast">
+      <button class="btn" routerLink="/forecast">forecast</button>
+    </div>
+  </div>
+</main>
+<footer routerLink="/city"><button>+</button></footer>

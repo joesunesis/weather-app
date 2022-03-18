@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-color: rgb(191, 210, 245);
+  color: rgb(61, 61, 61);
+}
+
+header {
+  margin: 20px 20px 0px 20px;
+  text-align: center;
+  font-size: 5rem;
+}
+
+main {
+  margin: 9em 0rem 8em;
+  padding: 0px 30px;
+  text-align: center;
+}
+
+.temp {
+  text-align: center;
+  font-size: 100px;
+  margin: 70px 0px 5px;
+}
+
+sup {
+  font-size: 40px;
+  margin-left: 5px;
+}
+
+main label {
+  font-size: 30px;
+}
+
+span {
+  font-size: 1em;
+  float: right;
+  margin-right: 10px;
+}
+
+.weather-condition {
+  margin: 8rem 0%;
+  text-align: left;
+}
+
+article {
+  /* font-spize: 20px; */
+  margin-bottom: 20px;
+}
+
+.forecast {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn {
+  width: 10em;
+  height: 4em;
+  background: rgb(123, 150, 201);
+  color: aliceblue;
+  font-size: 16px;
+  border-radius: 25px;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-start;
+  margin-right: 3rem;
+}
+
+footer button {
+  width: 1em;
+  font-size: 5em;
+  border-radius: 50px;
+  background: rgb(191, 210, 245);
+}
