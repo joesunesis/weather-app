@@ -8,7 +8,7 @@ import { WeatherService } from '../../services/weather.service';
   styleUrls: ['./forecast.component.css']
 })
 export class ForecastComponent implements OnInit {
-  @Input() loc: string = '';
+  @Input() loc: string = 'Accra';
   weather: any = <any>{};
   forecast: any = <any>{};
   msg: string = '';
@@ -16,21 +16,23 @@ export class ForecastComponent implements OnInit {
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
-    // this.searchWeather(this.loc);
+    this.searchWeather(this.loc);
   }
 
   searchWeather(loc: string){
-    this.weatherService.getWeather(loc).subscribe((data: any) => {
+    this.weatherService.getCity(loc).subscribe((data: any) => {
       this.weather = data; 
-      this.getForecast(data?.Key);
-      this.msg = data.message;
-      console.log("Weather Started: ", data)
+      this.getForecast(data[0]?.Key);
+      this.msg = data?.message;
+      console.log("Searching for city .... ", data)
     })
   }
 
   getForecast(loc: string) {
     this.weatherService.getForecast(loc).subscribe((data: any) => {
-      this.forecast = data;
+      this.forecast = data.DailyForecasts[0];
+      this.msg = data.message;
+      console.log("Weather Forecast Obtained: ", data)
     })
   }
 

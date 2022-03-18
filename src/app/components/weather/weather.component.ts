@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WeatherService } from '../../services/weather.service';
 
@@ -10,8 +10,10 @@ import { WeatherService } from '../../services/weather.service';
 export class WeatherComponent implements OnInit {
 
   @Input() loc: string = 'Accra';
-  weather: any = <any>{};
+  weatherData: any = <any>{};
+  @Output() weather: any = <any>{};
   msg: string = '';
+
 
   constructor(private weatherService: WeatherService) { }
 
@@ -30,9 +32,9 @@ export class WeatherComponent implements OnInit {
 
   getWeatherData(loc: string){
     this.weatherService.getWeather(loc).subscribe((data: any) => {
-      this.weather = data;
+      this.weatherData = data[0];
       this.msg = data.message;
-      console.log("Obtained Weather Data")
+      console.log("Obtained Weather Data", data);
     })
   }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const apiKey: string = '3h1Bpz9LZ3q8iciMosmvAuEGUp4iCDkL';
+const apiKey: string = 'Zl6FuSx5bRJAKkZbHCShadWciTM3S93d';
 const baseUrl: string = 'http://dataservice.accuweather.com';
 
 const searchCityUrl: string = 'locations/v1/cities/search'; 
@@ -21,12 +21,11 @@ export class WeatherService {
     return this.http.get(`${baseUrl}/${searchCityUrl}/?q=${loc}&apikey=${apiKey}`);
   }
 
-  getWeather(loc: string): any {
-    return this.http.get(`${baseUrl}/${weatherUrl}/?q=${loc}&apikey=${apiKey}`);
+  getWeather(locKey: string): any {
+    return this.http.get(`${baseUrl}/${weatherUrl}/${locKey}/?apikey=${apiKey}`);
   }
   
-  getForecast(loc: string): any {
-    console.log('forsalkjladfla');
-    return this.http.get(`${baseUrl}/${forecastUrl}?q=${loc}&apikey=${apiKey}`);
+  getForecast(locKey: string): any {
+    return this.http.get(`${baseUrl}/${forecastUrl}/${locKey}?apikey=${apiKey}`);
   }
 }

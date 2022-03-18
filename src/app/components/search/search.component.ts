@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
    }
 
    ngOnInit(): void {
-     // this.searchWeather(this.loc);
+    //  this.searchWeather(this.loc);
    }
 
    searchWeather(loc: string){

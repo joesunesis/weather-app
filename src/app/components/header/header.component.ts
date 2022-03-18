@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() loc: any = <any>{}
+  @Input() loc: string = ''
   
   constructor() { }
 

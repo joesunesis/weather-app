@@ -1,68 +1,26 @@
-<header>
-  <app-header></app-header>
-</header>
+<h3 class="footer">Forecast</h3>
 <div>
-  <h1></h1>
-  <!-- <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        <h2>:'MMM d, y, h:mm:ss a'}}</h2>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content> -->
-      <table>
-        <tbody>
-          <tr>
-            <td>Temperature</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Minimum Temperature</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Maximum Temperature</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Pressure</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Sea Level</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Ground Level</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Humidity</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Weather</td>
-            <td>
-              <ul>
-                <li>
-                  
-                </li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td>Wind Speed</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Wind Direction</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    <!-- </mat-card-content>
-  </mat-card> -->
+  <table>
+    <tbody>
+      <tr>
+        <td>Day</td>
+        <td>{{forecast.Day.IconPhrase}}</td>
+      </tr>
+      <tr>
+        <td>Night</td>
+        <td>{{forecast.Night.IconPhrase}}</td>
+      </tr>
+      <tr>
+        <td>Minimum Temperature</td>
+        <td>{{forecast.Temperature.Minimum.Value}} {{forecast.Temperature.Minimum.Unit}}</td>
+      </tr>
+      <tr>
+        <td>Maximum Temperature</td>
+        <td>{{forecast.Temperature.Maximum.Value}} {{forecast.Temperature.Minimum.Unit}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div>
-  <h1 class="center">'Failed to get weather.'</h1>
+<div class="footer" *ngIf="!resultFound()">
+  <h1>{{ msg || 'Failed to get weather.'}}</h1>
 </div>
